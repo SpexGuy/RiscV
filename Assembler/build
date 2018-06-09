@@ -1,0 +1,4 @@
+#!/bin/bash
+g++ assembler.cpp    -o assemble
+g++ disassembler.cpp -o disassemble
+g++ simulator.cpp    -o simulate

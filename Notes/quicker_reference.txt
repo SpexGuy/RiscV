@@ -1,0 +1,95 @@
+ADD    rd, rs1, rs2     ; add
+ADDI   rd, rs1, #imm12  ; add immediate
+AND    rd, rs1, rs2     ; and
+ANDI   rd, rs1, #imm12  ; and immediate
+MV     rd, rs1          ; copy rs1 into rd
+NEG    rd, rs1          ; two's-complement negation
+NOP                     ; no-op
+NOT    rd, rs           ; arithmetic not
+OR     rd, rs1, rs2     ; or
+ORI    rd, rs1, #imm12  ; or immediate
+SLL    rd, rs1, rs2     ; shift left logical
+SLLI   rd, rs1, #imm5   ; shift left logical immediate
+SRA    rd, rs1, rs2     ; shift right arithmetic
+SRAI   rd, rs1, #imm5   ; shift right arithmetic immediate
+SRL    rd, rs1, rs2     ; shift right logical
+SRLI   rd, rs1, #imm5   ; shift right logical immediate
+SUB    rd, rs1, rs2     ; subtract
+XOR    rd, rs1, rs2     ; xor
+XORI   rd, rs1, #imm12  ; xor immediate
+
+SLT    rd, rs1, rs2     ; set less than
+SLTI   rd, rs1, #imm12  ; set less than immediate signed
+SLTIU  rd, rs1, #imm12  ; set less than immediate unsigned
+SLTU   rd, rs1, rs2     ; set less than unsigned
+SEQZ   rd, rs           ; set equal to zero
+SNEZ   rd, rs           ; set not equal to zero
+SLTZ   rd, rs           ; set less than zero
+SGTZ   rd, rs           ; set greater than zero
+
+LB     rd, rs1, #imm12  ; load byte
+LBU    rd, rs1, #imm12  ; load byte unsigned
+LH     rd, rs1, #imm12  ; load half
+LHU    rd, rs1, #imm12  ; load half unsigned
+LW     rd, rs1, #imm12  ; load word
+L*     rd, LABEL        ; load from label
+SB     rs2, rs1, #imm12 ; store byte
+SH     rs2, rs1, #imm12 ; store half
+SW     rs2, rs1, #imm12 ; store word
+S*     rd, LABEL        ; store to label
+
+LI     rd, #imm32       ; load 32-bit word into rd
+LA     rd, LABEL        ; load address of LABEL into rd
+
+AUIPC  rd, #imm20       ; add upper immediate to PC
+LUI    rd, #imm20       ; load upper immediate
+
+BEQ    rs1, rs2, #imm13 ; branch if equal
+BGE    rs1, rs2, #imm13 ; branch if greater than or equal to
+BGEU   rs1, rs2, #imm13 ; branch if greater than or equal to unsigned
+BGT    rs1, rs2, #imm13 ; branch if greater than
+BGTU   rs1, rs2, #imm13 ; branch if greater than unsigned
+BLE    rs1, rs2, #imm13 ; branch if less than or equal to
+BLEU   rs1, rs2, #imm13 ; branch if less than or equal to unsigned
+BLT    rs1, rs2, #imm13 ; branch if less than
+BLTU   rs1, rs2, #imm13 ; branch if less than unsigned
+BNE    rs1, rs2, #imm13 ; branch if not equal
+BEQZ   rs1, #imm13      ; branch if equal to zero
+BGEZ   rs1, #imm13      ; branch if greater than or equal to zero
+BGTZ   rs1, #imm13      ; branch if greater than zero
+BLEZ   rs1, #imm13      ; branch if less than or equal to zero
+BLTZ   rs1, #imm13      ; branch if less than zero
+BNEZ   rs1, #imm13      ; branch if not equal to zero
+
+J      LABEL            ; unconditional jump
+JR     rs1, #imm12      ; jump to register
+JAL    rd,  LABEL       ; jump and link into rd
+JAL    LABEL            ; jump and link into implicit link register x1
+JALR   rd,  rs1, #imm12 ; jump and link to register
+CALL   LABEL            ; jump and link to faraway label
+TAIL   LABEL            ; jump to faraway label
+RET                     ; jump to link register (x1)
+
+FENCE  <flags>          ; memory fence on the given flags
+FENCE.I                 ; fence to synchronize i/d streams
+
+CSRC   csr, rs1         ; unset bits in a hardware counter
+CSRCI  csr, #imm5       ; unset bits in a hardware counter immediate
+CSRR   rd, csr          ; read a hardware counter
+CSRRC  rd, csr, rs1     ; read/clear bits in CSR atomic
+CSRRS  rd, csr, rs1     ; read/set bits in CSR atomic
+CSRRW  rd, csr, rs1     ; read/write CSR atomic
+CSRRWI rd, csr, #imm5   ; read/write CSR with immediate
+CSRRSI rd, csr, #imm5   ; read/set bits in CSR with immediate
+CSRRCI rd, csr, #imm5   ; read/clear bits in CSR with immediate
+CSRS   csr, rs1         ; set bits in a hardware counter
+CSRSI  csr, #imm5       ; set bits in a hardware counter immediate
+CSRW   csr, rs1         ; write a hardware counter
+CSRWI  csr, #imm5       ; write a hardware counter immediate
+
+RDCYCLE[H]   rd         ; read cycle counter, H for high 32 bits
+RDINSTRET[H] rd         ; read instructions retired, H for high 32 bits
+RDTIME[H]    rd         ; read wall-clock time counter, H for high 32 bits
+
+EBREAK                  ; transfer control to a debugger
+ECALL                   ; trap into an OS call

@@ -1,0 +1,6 @@
+.DS_Store
+Assembler/assemble
+Assembler/disassemble
+Assembler/simulate
+Programs/*.o
+
