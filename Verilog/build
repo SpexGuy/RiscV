@@ -1,6 +1,9 @@
 #!/bin/bash
 
+VFLAGS="-g2012"
+
 rm -rf bin/
 mkdir bin
 
-iverilog -g2012 -o bin/alu.vvp src/alu.sv test/alu_test.sv
+iverilog $VFLAGS -o bin/alu.vvp src/alu.sv test/alu_test.sv
+iverilog $VFLAGS -o bin/regfile.vvp src/regfile.sv test/regfile_test.sv

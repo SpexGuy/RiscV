@@ -41,6 +41,8 @@ module alu_test;
         if (!fail) begin
             $display("ALU Test: ALL PASS");
         end
+
+        $finish ;
     end
 
 endmodule

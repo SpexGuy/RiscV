@@ -1,3 +1,4 @@
 #!/bin/bash
 
 vvp bin/alu.vvp
+vvp bin/regfile.vvp
