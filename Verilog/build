@@ -3,4 +3,4 @@
 rm -rf bin/
 mkdir bin
 
-iverilog -o bin/hello.vvp test/hello_world.sv
+iverilog -g2012 -o bin/alu.vvp src/alu.sv test/alu_test.sv
