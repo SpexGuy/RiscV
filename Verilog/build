@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -rf bin/
+mkdir bin
+
+iverilog -o bin/hello.vvp test/hello_world.sv

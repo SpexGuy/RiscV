@@ -4,3 +4,4 @@ Assembler/disassemble
 Assembler/simulate
 Programs/*.o
 
+Verilog/bin/
