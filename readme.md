@@ -38,6 +38,10 @@ cd Verilog
 ## Instantiating on an FPGA
 Coming soon, hopefully!
 
+## Diagrams:
+Single-cycle design:
+https://docs.google.com/drawings/d/1b8XIaz4Rt0YtwfL9ZVi_imPRlvix7FpQp_StdsAsH9s/edit?usp=sharing
+
 ## Current Status
 - [x] assembler/linker
 - [x] disassembler
