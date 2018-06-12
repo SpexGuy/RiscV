@@ -48,13 +48,18 @@ https://docs.google.com/drawings/d/1b8XIaz4Rt0YtwfL9ZVi_imPRlvix7FpQp_StdsAsH9s/
 - [x] software emulator, user-mode
 - [ ] software emulator, supervisor instructions
 - [x] verilog project setup
-- [ ] ALU
-- [ ] register file
-- [ ] ??? other hardware parts ???
+- [x] ALU
+- [x] register file
+- [ ] CSR unit
+- [ ] decode unit
+- [ ] branch calculation unit
+- [ ] single-cycle processor integration
 - [ ] rv32i base user-mode instructions
 - [ ] traps
 - [ ] supervisor instructions
 - [ ] FPGA instantiation
+- [ ] standard 5-stage pipeline
+- [ ] forwarding
 - [ ] branch prediction, upwards always taken
 - [ ] "M" extension for integer multiplication/division
 - [ ] ??? a better model of memory where reads can take many clocks ???
